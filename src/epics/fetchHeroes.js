@@ -32,7 +32,9 @@ export const fetchHeroes = (action$, store) =>
       }
         
   );
-
+//NOTE: Prev shouldnt actually send a request to load again, because we already have the items
+// but tahts an optimization and will require me a bit more time. Also if you go Next on a page you've already loaded,
+// there is no point in sending a request again. Can show an code example how I modified react-table and achieved this if needed.
 export const changePage = action$ =>
   action$.filter(action => {
     return action.type === PREV_PAGE ||
